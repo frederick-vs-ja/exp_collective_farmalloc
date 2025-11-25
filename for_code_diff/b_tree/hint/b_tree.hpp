@@ -74,7 +74,6 @@ public:
     using size_type = std::make_unsigned_t<difference_type>;
     struct const_iterator : BTreeIterBase<Node> {
         using Base = BTreeIterBase<Node>;
-        using itertor_concept = std::bidirectional_iterator_tag;
         using difference_type = BTreeMap::difference_type;
         using value_type = typename Base::value_type;
         const value_type& operator*() const noexcept { return *Base::get(); }
@@ -88,7 +87,6 @@ public:
     using const_reverse_iterator = std::reverse_iterator<const_iterator>;
     struct iterator : BTreeIterBase<Node> {
         using Base = BTreeIterBase<Node>;
-        using itertor_concept = std::bidirectional_iterator_tag;
         using difference_type = BTreeMap::difference_type;
         using value_type = typename Base::value_type;
         value_type& operator*() const noexcept { return *Base::get(); }
